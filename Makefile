@@ -5,7 +5,7 @@ build-client:
 	docker run --rm -w /zeebe/build -v ${PWD}:/zeebe zeebe-client-builder sh gen.sh $(version)
 
 tag:
-	git tag v$(VERSION)
+	git tag -a v$(VERSION) -m "Zeebe client version: $(VERSION)"
 
 push-release:
 	git push origin v$(VERSION)
