@@ -1,0 +1,25 @@
+{
+    "name": "radek-baczynski/zeebe-php-client",
+    "type": "library",
+    "description": "PHP Client for zeebe workflow engine (https://zeebe.io)",
+    "keywords": ["zeebe", "microservice", "orchestration", "workflow", "bpmn"],
+    "homepage": "https://github.com/radek-baczynski/zeebe-php-client",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/radek-baczynski/zeebe-php-client/issues"
+    },
+    "authors": [
+        {
+            "name": "Radek Baczyński",
+            "email": "radek.baczynski@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.9",
+        "ext-grpc": "*",
+        "ext-protobuf":     "*"
+    },
+    "autoload": {
+        "psr-4": {"ZeebeClient\\": "src/ZeebeClient"}
+    }
+}
