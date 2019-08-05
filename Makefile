@@ -8,4 +8,4 @@ tag:
 	git tag v$(VERSION)
 
 push-release:
-	git push origin master
+	git push origin v$(VERSION)
