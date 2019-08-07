@@ -1,0 +1,10 @@
+{
+    "name": "root/app",
+    "type": "project",
+    "require": {
+        "radek-baczynski/zeebe-php-client": "^0.20.0",
+        "grpc/grpc": "^1.22",
+        "php": ">=7.1",
+        "ext-json": "*"
+    }
+}

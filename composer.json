@@ -15,9 +15,10 @@
         }
     ],
     "require": {
-        "php": ">=5.3.9",
+        "php": ">=7.1",
+        "grpc/grpc": "^1.22",
         "ext-grpc": "*",
-        "ext-protobuf":     "*"
+        "ext-protobuf": "*"
     },
     "autoload": {
         "psr-4": {"ZeebeClient\\": "src/ZeebeClient"}

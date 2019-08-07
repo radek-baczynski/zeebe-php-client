@@ -1,0 +1,105 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "91ce285d3089389f8b2fc4caf2a95e48",
+    "packages": [
+        {
+            "name": "grpc/grpc",
+            "version": "1.22.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/grpc/grpc-php.git",
+                "reference": "88235e786ef9b55fcb049f00c5c5202f8086a299"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/grpc/grpc-php/zipball/88235e786ef9b55fcb049f00c5c5202f8086a299",
+                "reference": "88235e786ef9b55fcb049f00c5c5202f8086a299",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "google/auth": "^v1.3.0"
+            },
+            "suggest": {
+                "ext-protobuf": "For better performance, install the protobuf C extension.",
+                "google/protobuf": "To get started using grpc quickly, install the native protobuf library."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Grpc\\": "src/lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "gRPC library for PHP",
+            "homepage": "https://grpc.io",
+            "keywords": [
+                "rpc"
+            ],
+            "time": "2019-07-03T19:57:39+00:00"
+        },
+        {
+            "name": "radek-baczynski/zeebe-php-client",
+            "version": "v0.20.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/radek-baczynski/zeebe-php-client.git",
+                "reference": "d024234c850ae141c540300ef7df3c9518da9a09"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/radek-baczynski/zeebe-php-client/zipball/d024234c850ae141c540300ef7df3c9518da9a09",
+                "reference": "d024234c850ae141c540300ef7df3c9518da9a09",
+                "shasum": ""
+            },
+            "require": {
+                "ext-grpc": "*",
+                "ext-protobuf": "*",
+                "php": ">=5.3.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ZeebeClient\\": "src/ZeebeClient"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Radek Baczyński",
+                    "email": "radek.baczynski@gmail.com"
+                }
+            ],
+            "description": "PHP Client for zeebe workflow engine (https://zeebe.io)",
+            "homepage": "https://github.com/radek-baczynski/zeebe-php-client",
+            "keywords": [
+                "Microservice",
+                "bpmn",
+                "orchestration",
+                "workflow",
+                "zeebe"
+            ],
+            "time": "2019-08-05T19:28:09+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
