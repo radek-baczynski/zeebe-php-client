@@ -17,8 +17,7 @@
     "require": {
         "php": ">=7.1",
         "grpc/grpc": "^1.22",
-        "ext-grpc": "*",
-        "ext-protobuf": "*"
+        "google/protobuf": "^3.9.1"
     },
     "autoload": {
         "psr-4": {"ZeebeClient\\": "src/ZeebeClient"}
