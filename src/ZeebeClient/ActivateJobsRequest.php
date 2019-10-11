@@ -46,6 +46,14 @@ class ActivateJobsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string fetchVariable = 5;</code>
      */
     private $fetchVariable;
+    /**
+     * The request will be completed when at least one job is activated or after the requestTimeout.
+     * if the requestTimeout = 0, a default timeout is used.
+     * if the requestTimeout < 0, long polling is disabled and the request is completed immediately, even when no job is activated.
+     *
+     * Generated from protobuf field <code>int64 requestTimeout = 6;</code>
+     */
+    private $requestTimeout = 0;
 
     /**
      * Constructor.
@@ -66,6 +74,10 @@ class ActivateJobsRequest extends \Google\Protobuf\Internal\Message
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $fetchVariable
      *           a list of variables to fetch as the job variables; if empty, all visible variables at
      *           the time of activation for the scope of the job will be returned
+     *     @type int|string $requestTimeout
+     *           The request will be completed when at least one job is activated or after the requestTimeout.
+     *           if the requestTimeout = 0, a default timeout is used.
+     *           if the requestTimeout < 0, long polling is disabled and the request is completed immediately, even when no job is activated.
      * }
      */
     public function __construct($data = NULL) {
@@ -205,6 +217,36 @@ class ActivateJobsRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->fetchVariable = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The request will be completed when at least one job is activated or after the requestTimeout.
+     * if the requestTimeout = 0, a default timeout is used.
+     * if the requestTimeout < 0, long polling is disabled and the request is completed immediately, even when no job is activated.
+     *
+     * Generated from protobuf field <code>int64 requestTimeout = 6;</code>
+     * @return int|string
+     */
+    public function getRequestTimeout()
+    {
+        return $this->requestTimeout;
+    }
+
+    /**
+     * The request will be completed when at least one job is activated or after the requestTimeout.
+     * if the requestTimeout = 0, a default timeout is used.
+     * if the requestTimeout < 0, long polling is disabled and the request is completed immediately, even when no job is activated.
+     *
+     * Generated from protobuf field <code>int64 requestTimeout = 6;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setRequestTimeout($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->requestTimeout = $var;
 
         return $this;
     }
