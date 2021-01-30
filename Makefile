@@ -6,6 +6,7 @@ build-client:
 	git add ./src/
 
 tag:
+	git commit -m "Zeebe client generated: $(VERSION)"
 	git tag -a v$(VERSION) -m "Zeebe client version: $(VERSION)"
 
 push-release:
