@@ -19,7 +19,7 @@ class CancelWorkflowInstanceRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int64 workflowInstanceKey = 1;</code>
      */
-    private $workflowInstanceKey = 0;
+    protected $workflowInstanceKey = 0;
 
     /**
      * Constructor.

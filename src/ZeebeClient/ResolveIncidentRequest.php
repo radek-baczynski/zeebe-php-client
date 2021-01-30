@@ -18,7 +18,7 @@ class ResolveIncidentRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int64 incidentKey = 1;</code>
      */
-    private $incidentKey = 0;
+    protected $incidentKey = 0;
 
     /**
      * Constructor.

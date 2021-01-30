@@ -18,25 +18,31 @@ class BrokerInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int32 nodeId = 1;</code>
      */
-    private $nodeId = 0;
+    protected $nodeId = 0;
     /**
      * hostname of the broker
      *
      * Generated from protobuf field <code>string host = 2;</code>
      */
-    private $host = '';
+    protected $host = '';
     /**
      * port for the broker
      *
      * Generated from protobuf field <code>int32 port = 3;</code>
      */
-    private $port = 0;
+    protected $port = 0;
     /**
      * list of partitions managed or replicated on this broker
      *
      * Generated from protobuf field <code>repeated .gateway_protocol.Partition partitions = 4;</code>
      */
     private $partitions;
+    /**
+     * broker version
+     *
+     * Generated from protobuf field <code>string version = 5;</code>
+     */
+    protected $version = '';
 
     /**
      * Constructor.
@@ -52,6 +58,8 @@ class BrokerInfo extends \Google\Protobuf\Internal\Message
      *           port for the broker
      *     @type \ZeebeClient\Partition[]|\Google\Protobuf\Internal\RepeatedField $partitions
      *           list of partitions managed or replicated on this broker
+     *     @type string $version
+     *           broker version
      * }
      */
     public function __construct($data = NULL) {
@@ -159,6 +167,32 @@ class BrokerInfo extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \ZeebeClient\Partition::class);
         $this->partitions = $arr;
+
+        return $this;
+    }
+
+    /**
+     * broker version
+     *
+     * Generated from protobuf field <code>string version = 5;</code>
+     * @return string
+     */
+    public function getVersion()
+    {
+        return $this->version;
+    }
+
+    /**
+     * broker version
+     *
+     * Generated from protobuf field <code>string version = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVersion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->version = $var;
 
         return $this;
     }

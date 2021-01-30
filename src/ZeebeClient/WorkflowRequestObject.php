@@ -18,20 +18,20 @@ class WorkflowRequestObject extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * the resource type; if set to BPMN or YAML then the file extension
      * is ignored
      *
      * Generated from protobuf field <code>.gateway_protocol.WorkflowRequestObject.ResourceType type = 2;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * the process definition as a UTF8-encoded string
      *
      * Generated from protobuf field <code>bytes definition = 3;</code>
      */
-    private $definition = '';
+    protected $definition = '';
 
     /**
      * Constructor.
@@ -101,7 +101,7 @@ class WorkflowRequestObject extends \Google\Protobuf\Internal\Message
      */
     public function setType($var)
     {
-        GPBUtil::checkEnum($var, \ZeebeClient\WorkflowRequestObject_ResourceType::class);
+        GPBUtil::checkEnum($var, \ZeebeClient\WorkflowRequestObject\ResourceType::class);
         $this->type = $var;
 
         return $this;

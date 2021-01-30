@@ -18,13 +18,13 @@ class UpdateJobRetriesRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int64 jobKey = 1;</code>
      */
-    private $jobKey = 0;
+    protected $jobKey = 0;
     /**
      * the new amount of retries for the job; must be positive
      *
      * Generated from protobuf field <code>int32 retries = 2;</code>
      */
-    private $retries = 0;
+    protected $retries = 0;
 
     /**
      * Constructor.

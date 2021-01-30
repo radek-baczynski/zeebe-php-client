@@ -19,19 +19,19 @@ class CreateWorkflowInstanceRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int64 workflowKey = 1;</code>
      */
-    private $workflowKey = 0;
+    protected $workflowKey = 0;
     /**
      * the BPMN process ID of the workflow definition
      *
      * Generated from protobuf field <code>string bpmnProcessId = 2;</code>
      */
-    private $bpmnProcessId = '';
+    protected $bpmnProcessId = '';
     /**
      * the version of the process; set to -1 to use the latest version
      *
      * Generated from protobuf field <code>int32 version = 3;</code>
      */
-    private $version = 0;
+    protected $version = 0;
     /**
      * JSON document that will instantiate the variables for the root variable scope of the
      * workflow instance; it must be a JSON object, as variables will be mapped in a
@@ -41,7 +41,7 @@ class CreateWorkflowInstanceRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string variables = 4;</code>
      */
-    private $variables = '';
+    protected $variables = '';
 
     /**
      * Constructor.

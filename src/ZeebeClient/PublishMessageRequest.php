@@ -18,33 +18,33 @@ class PublishMessageRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * the correlation key of the message
      *
      * Generated from protobuf field <code>string correlationKey = 2;</code>
      */
-    private $correlationKey = '';
+    protected $correlationKey = '';
     /**
      * how long the message should be buffered on the broker, in milliseconds
      *
      * Generated from protobuf field <code>int64 timeToLive = 3;</code>
      */
-    private $timeToLive = 0;
+    protected $timeToLive = 0;
     /**
      * the unique ID of the message; can be omitted. only useful to ensure only one message
      * with the given ID will ever be published (during its lifetime)
      *
      * Generated from protobuf field <code>string messageId = 4;</code>
      */
-    private $messageId = '';
+    protected $messageId = '';
     /**
      * the message variables as a JSON document; to be valid, the root of the document must be an
      * object, e.g. { "a": "foo" }. [ "foo" ] would not be valid.
      *
      * Generated from protobuf field <code>string variables = 5;</code>
      */
-    private $variables = '';
+    protected $variables = '';
 
     /**
      * Constructor.

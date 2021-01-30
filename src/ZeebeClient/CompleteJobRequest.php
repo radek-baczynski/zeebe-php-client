@@ -18,13 +18,13 @@ class CompleteJobRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int64 jobKey = 1;</code>
      */
-    private $jobKey = 0;
+    protected $jobKey = 0;
     /**
      * a JSON document representing the variables in the current task scope
      *
      * Generated from protobuf field <code>string variables = 2;</code>
      */
-    private $variables = '';
+    protected $variables = '';
 
     /**
      * Constructor.

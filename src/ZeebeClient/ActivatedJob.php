@@ -18,82 +18,82 @@ class ActivatedJob extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int64 key = 1;</code>
      */
-    private $key = 0;
+    protected $key = 0;
     /**
      * the type of the job (should match what was requested)
      *
      * Generated from protobuf field <code>string type = 2;</code>
      */
-    private $type = '';
+    protected $type = '';
     /**
      * the job's workflow instance key
      *
      * Generated from protobuf field <code>int64 workflowInstanceKey = 3;</code>
      */
-    private $workflowInstanceKey = 0;
+    protected $workflowInstanceKey = 0;
     /**
      * the bpmn process ID of the job workflow definition
      *
      * Generated from protobuf field <code>string bpmnProcessId = 4;</code>
      */
-    private $bpmnProcessId = '';
+    protected $bpmnProcessId = '';
     /**
      * the version of the job workflow definition
      *
      * Generated from protobuf field <code>int32 workflowDefinitionVersion = 5;</code>
      */
-    private $workflowDefinitionVersion = 0;
+    protected $workflowDefinitionVersion = 0;
     /**
      * the key of the job workflow definition
      *
      * Generated from protobuf field <code>int64 workflowKey = 6;</code>
      */
-    private $workflowKey = 0;
+    protected $workflowKey = 0;
     /**
      * the associated task element ID
      *
      * Generated from protobuf field <code>string elementId = 7;</code>
      */
-    private $elementId = '';
+    protected $elementId = '';
     /**
      * the unique key identifying the associated task, unique within the scope of the
      * workflow instance
      *
      * Generated from protobuf field <code>int64 elementInstanceKey = 8;</code>
      */
-    private $elementInstanceKey = 0;
+    protected $elementInstanceKey = 0;
     /**
      * a set of custom headers defined during modelling; returned as a serialized
      * JSON document
      *
      * Generated from protobuf field <code>string customHeaders = 9;</code>
      */
-    private $customHeaders = '';
+    protected $customHeaders = '';
     /**
      * the name of the worker which activated this job
      *
      * Generated from protobuf field <code>string worker = 10;</code>
      */
-    private $worker = '';
+    protected $worker = '';
     /**
      * the amount of retries left to this job (should always be positive)
      *
      * Generated from protobuf field <code>int32 retries = 11;</code>
      */
-    private $retries = 0;
+    protected $retries = 0;
     /**
      * when the job can be activated again, sent as a UNIX epoch timestamp
      *
      * Generated from protobuf field <code>int64 deadline = 12;</code>
      */
-    private $deadline = 0;
+    protected $deadline = 0;
     /**
      * JSON document, computed at activation time, consisting of all visible variables to
      * the task scope
      *
      * Generated from protobuf field <code>string variables = 13;</code>
      */
-    private $variables = '';
+    protected $variables = '';
 
     /**
      * Constructor.

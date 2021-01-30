@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>gateway_protocol.CreateWorkflowInstanceResponse</code>
+ * Generated from protobuf message <code>gateway_protocol.CreateWorkflowInstanceWithResultResponse</code>
  */
-class CreateWorkflowInstanceResponse extends \Google\Protobuf\Internal\Message
+class CreateWorkflowInstanceWithResultResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * the key of the workflow definition which was used to create the workflow instance
@@ -39,6 +39,13 @@ class CreateWorkflowInstanceResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 workflowInstanceKey = 4;</code>
      */
     protected $workflowInstanceKey = 0;
+    /**
+     * JSON document
+     * consists of visible variables in the root scope
+     *
+     * Generated from protobuf field <code>string variables = 5;</code>
+     */
+    protected $variables = '';
 
     /**
      * Constructor.
@@ -56,6 +63,9 @@ class CreateWorkflowInstanceResponse extends \Google\Protobuf\Internal\Message
      *     @type int|string $workflowInstanceKey
      *           the unique identifier of the created workflow instance; to be used wherever a request
      *           needs a workflow instance key (e.g. CancelWorkflowInstanceRequest)
+     *     @type string $variables
+     *           JSON document
+     *           consists of visible variables in the root scope
      * }
      */
     public function __construct($data = NULL) {
@@ -167,6 +177,34 @@ class CreateWorkflowInstanceResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->workflowInstanceKey = $var;
+
+        return $this;
+    }
+
+    /**
+     * JSON document
+     * consists of visible variables in the root scope
+     *
+     * Generated from protobuf field <code>string variables = 5;</code>
+     * @return string
+     */
+    public function getVariables()
+    {
+        return $this->variables;
+    }
+
+    /**
+     * JSON document
+     * consists of visible variables in the root scope
+     *
+     * Generated from protobuf field <code>string variables = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVariables($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->variables = $var;
 
         return $this;
     }

@@ -19,26 +19,26 @@ class ActivateJobsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string type = 1;</code>
      */
-    private $type = '';
+    protected $type = '';
     /**
      * the name of the worker activating the jobs, mostly used for logging purposes
      *
      * Generated from protobuf field <code>string worker = 2;</code>
      */
-    private $worker = '';
+    protected $worker = '';
     /**
      * a job returned after this call will not be activated by another call until the
-     * timeout has been reached
+     * timeout (in ms) has been reached
      *
      * Generated from protobuf field <code>int64 timeout = 3;</code>
      */
-    private $timeout = 0;
+    protected $timeout = 0;
     /**
      * the maximum jobs to activate by this request
      *
      * Generated from protobuf field <code>int32 maxJobsToActivate = 4;</code>
      */
-    private $maxJobsToActivate = 0;
+    protected $maxJobsToActivate = 0;
     /**
      * a list of variables to fetch as the job variables; if empty, all visible variables at
      * the time of activation for the scope of the job will be returned
@@ -46,6 +46,14 @@ class ActivateJobsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string fetchVariable = 5;</code>
      */
     private $fetchVariable;
+    /**
+     * The request will be completed when at least one job is activated or after the requestTimeout (in ms).
+     * if the requestTimeout = 0, a default timeout is used.
+     * if the requestTimeout < 0, long polling is disabled and the request is completed immediately, even when no job is activated.
+     *
+     * Generated from protobuf field <code>int64 requestTimeout = 6;</code>
+     */
+    protected $requestTimeout = 0;
 
     /**
      * Constructor.
@@ -60,12 +68,16 @@ class ActivateJobsRequest extends \Google\Protobuf\Internal\Message
      *           the name of the worker activating the jobs, mostly used for logging purposes
      *     @type int|string $timeout
      *           a job returned after this call will not be activated by another call until the
-     *           timeout has been reached
+     *           timeout (in ms) has been reached
      *     @type int $maxJobsToActivate
      *           the maximum jobs to activate by this request
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $fetchVariable
      *           a list of variables to fetch as the job variables; if empty, all visible variables at
      *           the time of activation for the scope of the job will be returned
+     *     @type int|string $requestTimeout
+     *           The request will be completed when at least one job is activated or after the requestTimeout (in ms).
+     *           if the requestTimeout = 0, a default timeout is used.
+     *           if the requestTimeout < 0, long polling is disabled and the request is completed immediately, even when no job is activated.
      * }
      */
     public function __construct($data = NULL) {
@@ -129,7 +141,7 @@ class ActivateJobsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * a job returned after this call will not be activated by another call until the
-     * timeout has been reached
+     * timeout (in ms) has been reached
      *
      * Generated from protobuf field <code>int64 timeout = 3;</code>
      * @return int|string
@@ -141,7 +153,7 @@ class ActivateJobsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * a job returned after this call will not be activated by another call until the
-     * timeout has been reached
+     * timeout (in ms) has been reached
      *
      * Generated from protobuf field <code>int64 timeout = 3;</code>
      * @param int|string $var
@@ -205,6 +217,36 @@ class ActivateJobsRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->fetchVariable = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The request will be completed when at least one job is activated or after the requestTimeout (in ms).
+     * if the requestTimeout = 0, a default timeout is used.
+     * if the requestTimeout < 0, long polling is disabled and the request is completed immediately, even when no job is activated.
+     *
+     * Generated from protobuf field <code>int64 requestTimeout = 6;</code>
+     * @return int|string
+     */
+    public function getRequestTimeout()
+    {
+        return $this->requestTimeout;
+    }
+
+    /**
+     * The request will be completed when at least one job is activated or after the requestTimeout (in ms).
+     * if the requestTimeout = 0, a default timeout is used.
+     * if the requestTimeout < 0, long polling is disabled and the request is completed immediately, even when no job is activated.
+     *
+     * Generated from protobuf field <code>int64 requestTimeout = 6;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setRequestTimeout($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->requestTimeout = $var;
 
         return $this;
     }

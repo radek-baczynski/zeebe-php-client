@@ -13,6 +13,12 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class SetVariablesResponse extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * the unique key of the set variables command
+     *
+     * Generated from protobuf field <code>int64 key = 1;</code>
+     */
+    protected $key = 0;
 
     /**
      * Constructor.
@@ -20,11 +26,39 @@ class SetVariablesResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int|string $key
+     *           the unique key of the set variables command
      * }
      */
     public function __construct($data = NULL) {
         \ZeebeClient\Zeebe::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * the unique key of the set variables command
+     *
+     * Generated from protobuf field <code>int64 key = 1;</code>
+     * @return int|string
+     */
+    public function getKey()
+    {
+        return $this->key;
+    }
+
+    /**
+     * the unique key of the set variables command
+     *
+     * Generated from protobuf field <code>int64 key = 1;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setKey($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->key = $var;
+
+        return $this;
     }
 
 }

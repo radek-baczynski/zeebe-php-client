@@ -19,26 +19,26 @@ class WorkflowMetadata extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string bpmnProcessId = 1;</code>
      */
-    private $bpmnProcessId = '';
+    protected $bpmnProcessId = '';
     /**
      * the assigned process version
      *
      * Generated from protobuf field <code>int32 version = 2;</code>
      */
-    private $version = 0;
+    protected $version = 0;
     /**
      * the assigned key, which acts as a unique identifier for this workflow
      *
      * Generated from protobuf field <code>int64 workflowKey = 3;</code>
      */
-    private $workflowKey = 0;
+    protected $workflowKey = 0;
     /**
      * the resource name (see: WorkflowRequestObject.name) from which this workflow was
      * parsed
      *
      * Generated from protobuf field <code>string resourceName = 4;</code>
      */
-    private $resourceName = '';
+    protected $resourceName = '';
 
     /**
      * Constructor.

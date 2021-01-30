@@ -24,19 +24,25 @@ class TopologyResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int32 clusterSize = 2;</code>
      */
-    private $clusterSize = 0;
+    protected $clusterSize = 0;
     /**
      * how many partitions are spread across the cluster
      *
      * Generated from protobuf field <code>int32 partitionsCount = 3;</code>
      */
-    private $partitionsCount = 0;
+    protected $partitionsCount = 0;
     /**
      * configured replication factor for this cluster
      *
      * Generated from protobuf field <code>int32 replicationFactor = 4;</code>
      */
-    private $replicationFactor = 0;
+    protected $replicationFactor = 0;
+    /**
+     * gateway version
+     *
+     * Generated from protobuf field <code>string gatewayVersion = 5;</code>
+     */
+    protected $gatewayVersion = '';
 
     /**
      * Constructor.
@@ -52,6 +58,8 @@ class TopologyResponse extends \Google\Protobuf\Internal\Message
      *           how many partitions are spread across the cluster
      *     @type int $replicationFactor
      *           configured replication factor for this cluster
+     *     @type string $gatewayVersion
+     *           gateway version
      * }
      */
     public function __construct($data = NULL) {
@@ -159,6 +167,32 @@ class TopologyResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->replicationFactor = $var;
+
+        return $this;
+    }
+
+    /**
+     * gateway version
+     *
+     * Generated from protobuf field <code>string gatewayVersion = 5;</code>
+     * @return string
+     */
+    public function getGatewayVersion()
+    {
+        return $this->gatewayVersion;
+    }
+
+    /**
+     * gateway version
+     *
+     * Generated from protobuf field <code>string gatewayVersion = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setGatewayVersion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->gatewayVersion = $var;
 
         return $this;
     }

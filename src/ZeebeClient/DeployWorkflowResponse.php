@@ -18,7 +18,7 @@ class DeployWorkflowResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int64 key = 1;</code>
      */
-    private $key = 0;
+    protected $key = 0;
     /**
      * a list of deployed workflows
      *

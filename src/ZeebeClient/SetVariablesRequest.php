@@ -20,14 +20,14 @@ class SetVariablesRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int64 elementInstanceKey = 1;</code>
      */
-    private $elementInstanceKey = 0;
+    protected $elementInstanceKey = 0;
     /**
      * a JSON serialized document describing variables as key value pairs; the root of the document
      * must be an object
      *
      * Generated from protobuf field <code>string variables = 2;</code>
      */
-    private $variables = '';
+    protected $variables = '';
     /**
      * if true, the variables will be merged strictly into the local scope (as indicated by
      * elementInstanceKey); this means the variables is not propagated to upper scopes.
@@ -39,7 +39,7 @@ class SetVariablesRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bool local = 3;</code>
      */
-    private $local = false;
+    protected $local = false;
 
     /**
      * Constructor.

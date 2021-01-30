@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>gateway_protocol.FailJobRequest</code>
+ * Generated from protobuf message <code>gateway_protocol.ThrowErrorRequest</code>
  */
-class FailJobRequest extends \Google\Protobuf\Internal\Message
+class ThrowErrorRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * the unique job identifier, as obtained when activating the job
@@ -20,15 +20,13 @@ class FailJobRequest extends \Google\Protobuf\Internal\Message
      */
     protected $jobKey = 0;
     /**
-     * the amount of retries the job should have left
+     * the error code that will be matched with an error catch event
      *
-     * Generated from protobuf field <code>int32 retries = 2;</code>
+     * Generated from protobuf field <code>string errorCode = 2;</code>
      */
-    protected $retries = 0;
+    protected $errorCode = '';
     /**
-     * an optional message describing why the job failed
-     * this is particularly useful if a job runs out of retries and an incident is raised,
-     * as it this message can help explain why an incident was raised
+     * an optional error message that provides additional context
      *
      * Generated from protobuf field <code>string errorMessage = 3;</code>
      */
@@ -42,12 +40,10 @@ class FailJobRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type int|string $jobKey
      *           the unique job identifier, as obtained when activating the job
-     *     @type int $retries
-     *           the amount of retries the job should have left
+     *     @type string $errorCode
+     *           the error code that will be matched with an error catch event
      *     @type string $errorMessage
-     *           an optional message describing why the job failed
-     *           this is particularly useful if a job runs out of retries and an incident is raised,
-     *           as it this message can help explain why an incident was raised
+     *           an optional error message that provides additional context
      * }
      */
     public function __construct($data = NULL) {
@@ -82,35 +78,33 @@ class FailJobRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * the amount of retries the job should have left
+     * the error code that will be matched with an error catch event
      *
-     * Generated from protobuf field <code>int32 retries = 2;</code>
-     * @return int
+     * Generated from protobuf field <code>string errorCode = 2;</code>
+     * @return string
      */
-    public function getRetries()
+    public function getErrorCode()
     {
-        return $this->retries;
+        return $this->errorCode;
     }
 
     /**
-     * the amount of retries the job should have left
+     * the error code that will be matched with an error catch event
      *
-     * Generated from protobuf field <code>int32 retries = 2;</code>
-     * @param int $var
+     * Generated from protobuf field <code>string errorCode = 2;</code>
+     * @param string $var
      * @return $this
      */
-    public function setRetries($var)
+    public function setErrorCode($var)
     {
-        GPBUtil::checkInt32($var);
-        $this->retries = $var;
+        GPBUtil::checkString($var, True);
+        $this->errorCode = $var;
 
         return $this;
     }
 
     /**
-     * an optional message describing why the job failed
-     * this is particularly useful if a job runs out of retries and an incident is raised,
-     * as it this message can help explain why an incident was raised
+     * an optional error message that provides additional context
      *
      * Generated from protobuf field <code>string errorMessage = 3;</code>
      * @return string
@@ -121,9 +115,7 @@ class FailJobRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * an optional message describing why the job failed
-     * this is particularly useful if a job runs out of retries and an incident is raised,
-     * as it this message can help explain why an incident was raised
+     * an optional error message that provides additional context
      *
      * Generated from protobuf field <code>string errorMessage = 3;</code>
      * @param string $var
