@@ -2,9 +2,12 @@
     "name": "root/app",
     "type": "project",
     "require": {
-        "radek-baczynski/zeebe-php-client": "^0.20.0",
-        "grpc/grpc": "^1.22",
+        "radek-baczynski/zeebe-php-client": "^0.26.0",
+        "grpc/grpc": "*",
         "php": ">=7.1",
-        "ext-json": "*"
+        "ext-json": "*",
+        "symfony/http-client": "^5.2",
+        "symfony/dotenv": "^5.2",
+        "google/protobuf": "^3.14"
     }
 }

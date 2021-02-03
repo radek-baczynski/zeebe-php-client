@@ -2,9 +2,7 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$client = new \ZeebeClient\GatewayClient('zeebe:26500', [
-'credentials' => \Grpc\ChannelCredentials::createInsecure(),
-]);
+$client = require __DIR__ . '/get_client.php';
 
 $client->waitForReady(100);
 

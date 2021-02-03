@@ -1,3 +1,5 @@
 build/zeebe.proto
 .idea
 examples/vendor
+/examples/camunda_cloud.txt
+/examples/.env

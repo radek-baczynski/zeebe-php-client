@@ -2,15 +2,13 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$client = new \ZeebeClient\GatewayClient('zeebe:26500', [
-    'credentials' => \Grpc\ChannelCredentials::createInsecure(),
-]);
+$client = require __DIR__ . '/get_client.php';
 
 $messageRequest = new \ZeebeClient\PublishMessageRequest([
     'name'           => 'order',
-    'correlationKey' => 104,
     'timeToLive'     => 60,
-    'variables'      => json_encode(['orderId' => 103]),
+    'correlationKey' => 103,
+    'variables'      => json_encode(['message' => 'Paid']),
 ]);
 
 $res = $client->PublishMessage($messageRequest)->wait();

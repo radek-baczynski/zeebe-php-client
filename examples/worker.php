@@ -2,16 +2,15 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$client = new \ZeebeClient\GatewayClient('zeebe:26500', [
-    'credentials' => \Grpc\ChannelCredentials::createInsecure(),
-]);
+/** @var \ZeebeClient\GatewayClient $client */
+$client = require __DIR__ . '/get_client.php';
 
 while (true) {
     $activeJobs = $client->ActivateJobs(new \ZeebeClient\ActivateJobsRequest([
-        'type'              => 'php_task',
-        'worker'            => 'php-worker',
+        'type' => 'php_task',
+        'worker' => 'php-worker',
         'maxJobsToActivate' => 1,
-        'timeout'           => 60,
+        'timeout' => 60,
     ]));
 
     /** @var \ZeebeClient\ActivateJobsResponse $response */
@@ -20,7 +19,7 @@ while (true) {
         foreach ($response->getJobs() as $job) {
 
             var_dump(["job received job: ", $job->getKey(), $job->getElementId()]);
-            sleep(rand(1,4));
+            sleep(rand(1, 4));
             var_dump(["job processed"]);
 
             $completeRequest = new \ZeebeClient\CompleteJobRequest([
