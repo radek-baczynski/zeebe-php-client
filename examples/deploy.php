@@ -8,12 +8,14 @@ $client = new \ZeebeClient\GatewayClient('zeebe:26500', [
 
 $client->waitForReady(100);
 
+$workflow = new ZeebeClient\WorkflowRequestObject([
+    'name' => 'order.bpmn',
+    'type' => \ZeebeClient\WorkflowRequestObject\ResourceType::value('bpmn'),
+    'definition' => file_get_contents(__DIR__.'/order.bpmn')
+]);
+
 $deployRequest = new \ZeebeClient\DeployWorkflowRequest([
-    new ZeebeClient\WorkflowRequestObject([
-        'name' => 'order.bpmn',
-        'type' => \ZeebeClient\WorkflowRequestObject\ResourceType::value('bpmn'),
-        'definition' => file_get_contents(__DIR__.'/order.bpmn')
-    ])
+    'workflows' => [$workflow]
 ]);
 
 [$rsp, $status] = $client->DeployWorkflow($deployRequest)->wait();
