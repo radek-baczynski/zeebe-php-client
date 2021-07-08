@@ -9,16 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>gateway_protocol.CreateWorkflowInstanceWithResultRequest</code>
+ * Generated from protobuf message <code>gateway_protocol.CreateProcessInstanceWithResultRequest</code>
  */
-class CreateWorkflowInstanceWithResultRequest extends \Google\Protobuf\Internal\Message
+class CreateProcessInstanceWithResultRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.gateway_protocol.CreateWorkflowInstanceRequest request = 1;</code>
+     * Generated from protobuf field <code>.gateway_protocol.CreateProcessInstanceRequest request = 1;</code>
      */
     protected $request = null;
     /**
-     * timeout (in ms). the request will be closed if the workflow is not completed
+     * timeout (in ms). the request will be closed if the process is not completed
      * before the requestTimeout.
      * if requestTimeout = 0, uses the generic requestTimeout configured in the gateway.
      *
@@ -26,7 +26,7 @@ class CreateWorkflowInstanceWithResultRequest extends \Google\Protobuf\Internal\
      */
     protected $requestTimeout = 0;
     /**
-     * list of names of variables to be included in `CreateWorkflowInstanceWithResultResponse.variables`
+     * list of names of variables to be included in `CreateProcessInstanceWithResultResponse.variables`
      * if empty, all visible variables in the root scope will be returned.
      *
      * Generated from protobuf field <code>repeated string fetchVariables = 3;</code>
@@ -39,13 +39,13 @@ class CreateWorkflowInstanceWithResultRequest extends \Google\Protobuf\Internal\
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \ZeebeClient\CreateWorkflowInstanceRequest $request
+     *     @type \ZeebeClient\CreateProcessInstanceRequest $request
      *     @type int|string $requestTimeout
-     *           timeout (in ms). the request will be closed if the workflow is not completed
+     *           timeout (in ms). the request will be closed if the process is not completed
      *           before the requestTimeout.
      *           if requestTimeout = 0, uses the generic requestTimeout configured in the gateway.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $fetchVariables
-     *           list of names of variables to be included in `CreateWorkflowInstanceWithResultResponse.variables`
+     *           list of names of variables to be included in `CreateProcessInstanceWithResultResponse.variables`
      *           if empty, all visible variables in the root scope will be returned.
      * }
      */
@@ -55,39 +55,29 @@ class CreateWorkflowInstanceWithResultRequest extends \Google\Protobuf\Internal\
     }
 
     /**
-     * Generated from protobuf field <code>.gateway_protocol.CreateWorkflowInstanceRequest request = 1;</code>
-     * @return \ZeebeClient\CreateWorkflowInstanceRequest
+     * Generated from protobuf field <code>.gateway_protocol.CreateProcessInstanceRequest request = 1;</code>
+     * @return \ZeebeClient\CreateProcessInstanceRequest
      */
     public function getRequest()
     {
-        return isset($this->request) ? $this->request : null;
-    }
-
-    public function hasRequest()
-    {
-        return isset($this->request);
-    }
-
-    public function clearRequest()
-    {
-        unset($this->request);
+        return $this->request;
     }
 
     /**
-     * Generated from protobuf field <code>.gateway_protocol.CreateWorkflowInstanceRequest request = 1;</code>
-     * @param \ZeebeClient\CreateWorkflowInstanceRequest $var
+     * Generated from protobuf field <code>.gateway_protocol.CreateProcessInstanceRequest request = 1;</code>
+     * @param \ZeebeClient\CreateProcessInstanceRequest $var
      * @return $this
      */
     public function setRequest($var)
     {
-        GPBUtil::checkMessage($var, \ZeebeClient\CreateWorkflowInstanceRequest::class);
+        GPBUtil::checkMessage($var, \ZeebeClient\CreateProcessInstanceRequest::class);
         $this->request = $var;
 
         return $this;
     }
 
     /**
-     * timeout (in ms). the request will be closed if the workflow is not completed
+     * timeout (in ms). the request will be closed if the process is not completed
      * before the requestTimeout.
      * if requestTimeout = 0, uses the generic requestTimeout configured in the gateway.
      *
@@ -100,7 +90,7 @@ class CreateWorkflowInstanceWithResultRequest extends \Google\Protobuf\Internal\
     }
 
     /**
-     * timeout (in ms). the request will be closed if the workflow is not completed
+     * timeout (in ms). the request will be closed if the process is not completed
      * before the requestTimeout.
      * if requestTimeout = 0, uses the generic requestTimeout configured in the gateway.
      *
@@ -117,7 +107,7 @@ class CreateWorkflowInstanceWithResultRequest extends \Google\Protobuf\Internal\
     }
 
     /**
-     * list of names of variables to be included in `CreateWorkflowInstanceWithResultResponse.variables`
+     * list of names of variables to be included in `CreateProcessInstanceWithResultResponse.variables`
      * if empty, all visible variables in the root scope will be returned.
      *
      * Generated from protobuf field <code>repeated string fetchVariables = 3;</code>
@@ -129,7 +119,7 @@ class CreateWorkflowInstanceWithResultRequest extends \Google\Protobuf\Internal\
     }
 
     /**
-     * list of names of variables to be included in `CreateWorkflowInstanceWithResultResponse.variables`
+     * list of names of variables to be included in `CreateProcessInstanceWithResultResponse.variables`
      * if empty, all visible variables in the root scope will be returned.
      *
      * Generated from protobuf field <code>repeated string fetchVariables = 3;</code>

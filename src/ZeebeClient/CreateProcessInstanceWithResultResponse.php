@@ -9,36 +9,36 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>gateway_protocol.CreateWorkflowInstanceWithResultResponse</code>
+ * Generated from protobuf message <code>gateway_protocol.CreateProcessInstanceWithResultResponse</code>
  */
-class CreateWorkflowInstanceWithResultResponse extends \Google\Protobuf\Internal\Message
+class CreateProcessInstanceWithResultResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * the key of the workflow definition which was used to create the workflow instance
+     * the key of the process definition which was used to create the process instance
      *
-     * Generated from protobuf field <code>int64 workflowKey = 1;</code>
+     * Generated from protobuf field <code>int64 processDefinitionKey = 1;</code>
      */
-    protected $workflowKey = 0;
+    protected $processDefinitionKey = 0;
     /**
-     * the BPMN process ID of the workflow definition which was used to create the workflow
+     * the BPMN process ID of the process definition which was used to create the process
      * instance
      *
      * Generated from protobuf field <code>string bpmnProcessId = 2;</code>
      */
     protected $bpmnProcessId = '';
     /**
-     * the version of the workflow definition which was used to create the workflow instance
+     * the version of the process definition which was used to create the process instance
      *
      * Generated from protobuf field <code>int32 version = 3;</code>
      */
     protected $version = 0;
     /**
-     * the unique identifier of the created workflow instance; to be used wherever a request
-     * needs a workflow instance key (e.g. CancelWorkflowInstanceRequest)
+     * the unique identifier of the created process instance; to be used wherever a request
+     * needs a process instance key (e.g. CancelProcessInstanceRequest)
      *
-     * Generated from protobuf field <code>int64 workflowInstanceKey = 4;</code>
+     * Generated from protobuf field <code>int64 processInstanceKey = 4;</code>
      */
-    protected $workflowInstanceKey = 0;
+    protected $processInstanceKey = 0;
     /**
      * JSON document
      * consists of visible variables in the root scope
@@ -53,16 +53,16 @@ class CreateWorkflowInstanceWithResultResponse extends \Google\Protobuf\Internal
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int|string $workflowKey
-     *           the key of the workflow definition which was used to create the workflow instance
+     *     @type int|string $processDefinitionKey
+     *           the key of the process definition which was used to create the process instance
      *     @type string $bpmnProcessId
-     *           the BPMN process ID of the workflow definition which was used to create the workflow
+     *           the BPMN process ID of the process definition which was used to create the process
      *           instance
      *     @type int $version
-     *           the version of the workflow definition which was used to create the workflow instance
-     *     @type int|string $workflowInstanceKey
-     *           the unique identifier of the created workflow instance; to be used wherever a request
-     *           needs a workflow instance key (e.g. CancelWorkflowInstanceRequest)
+     *           the version of the process definition which was used to create the process instance
+     *     @type int|string $processInstanceKey
+     *           the unique identifier of the created process instance; to be used wherever a request
+     *           needs a process instance key (e.g. CancelProcessInstanceRequest)
      *     @type string $variables
      *           JSON document
      *           consists of visible variables in the root scope
@@ -74,33 +74,33 @@ class CreateWorkflowInstanceWithResultResponse extends \Google\Protobuf\Internal
     }
 
     /**
-     * the key of the workflow definition which was used to create the workflow instance
+     * the key of the process definition which was used to create the process instance
      *
-     * Generated from protobuf field <code>int64 workflowKey = 1;</code>
+     * Generated from protobuf field <code>int64 processDefinitionKey = 1;</code>
      * @return int|string
      */
-    public function getWorkflowKey()
+    public function getProcessDefinitionKey()
     {
-        return $this->workflowKey;
+        return $this->processDefinitionKey;
     }
 
     /**
-     * the key of the workflow definition which was used to create the workflow instance
+     * the key of the process definition which was used to create the process instance
      *
-     * Generated from protobuf field <code>int64 workflowKey = 1;</code>
+     * Generated from protobuf field <code>int64 processDefinitionKey = 1;</code>
      * @param int|string $var
      * @return $this
      */
-    public function setWorkflowKey($var)
+    public function setProcessDefinitionKey($var)
     {
         GPBUtil::checkInt64($var);
-        $this->workflowKey = $var;
+        $this->processDefinitionKey = $var;
 
         return $this;
     }
 
     /**
-     * the BPMN process ID of the workflow definition which was used to create the workflow
+     * the BPMN process ID of the process definition which was used to create the process
      * instance
      *
      * Generated from protobuf field <code>string bpmnProcessId = 2;</code>
@@ -112,7 +112,7 @@ class CreateWorkflowInstanceWithResultResponse extends \Google\Protobuf\Internal
     }
 
     /**
-     * the BPMN process ID of the workflow definition which was used to create the workflow
+     * the BPMN process ID of the process definition which was used to create the process
      * instance
      *
      * Generated from protobuf field <code>string bpmnProcessId = 2;</code>
@@ -128,7 +128,7 @@ class CreateWorkflowInstanceWithResultResponse extends \Google\Protobuf\Internal
     }
 
     /**
-     * the version of the workflow definition which was used to create the workflow instance
+     * the version of the process definition which was used to create the process instance
      *
      * Generated from protobuf field <code>int32 version = 3;</code>
      * @return int
@@ -139,7 +139,7 @@ class CreateWorkflowInstanceWithResultResponse extends \Google\Protobuf\Internal
     }
 
     /**
-     * the version of the workflow definition which was used to create the workflow instance
+     * the version of the process definition which was used to create the process instance
      *
      * Generated from protobuf field <code>int32 version = 3;</code>
      * @param int $var
@@ -154,29 +154,29 @@ class CreateWorkflowInstanceWithResultResponse extends \Google\Protobuf\Internal
     }
 
     /**
-     * the unique identifier of the created workflow instance; to be used wherever a request
-     * needs a workflow instance key (e.g. CancelWorkflowInstanceRequest)
+     * the unique identifier of the created process instance; to be used wherever a request
+     * needs a process instance key (e.g. CancelProcessInstanceRequest)
      *
-     * Generated from protobuf field <code>int64 workflowInstanceKey = 4;</code>
+     * Generated from protobuf field <code>int64 processInstanceKey = 4;</code>
      * @return int|string
      */
-    public function getWorkflowInstanceKey()
+    public function getProcessInstanceKey()
     {
-        return $this->workflowInstanceKey;
+        return $this->processInstanceKey;
     }
 
     /**
-     * the unique identifier of the created workflow instance; to be used wherever a request
-     * needs a workflow instance key (e.g. CancelWorkflowInstanceRequest)
+     * the unique identifier of the created process instance; to be used wherever a request
+     * needs a process instance key (e.g. CancelProcessInstanceRequest)
      *
-     * Generated from protobuf field <code>int64 workflowInstanceKey = 4;</code>
+     * Generated from protobuf field <code>int64 processInstanceKey = 4;</code>
      * @param int|string $var
      * @return $this
      */
-    public function setWorkflowInstanceKey($var)
+    public function setProcessInstanceKey($var)
     {
         GPBUtil::checkInt64($var);
-        $this->workflowInstanceKey = $var;
+        $this->processInstanceKey = $var;
 
         return $this;
     }

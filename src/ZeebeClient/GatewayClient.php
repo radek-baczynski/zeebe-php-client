@@ -30,7 +30,7 @@ class GatewayClient extends \Grpc\BaseStub {
      * @param \ZeebeClient\ActivateJobsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\ServerStreamingCall
+     * @return \ZeebeClient\ActivateJobsResponse
      */
     public function ActivateJobs(\ZeebeClient\ActivateJobsRequest $argument,
       $metadata = [], $options = []) {
@@ -42,21 +42,21 @@ class GatewayClient extends \Grpc\BaseStub {
 
     /**
      *
-     * Cancels a running workflow instance
+     * Cancels a running process instance
      *
      * Errors:
      * NOT_FOUND:
-     * - no workflow instance exists with the given key
-     * @param \ZeebeClient\CancelWorkflowInstanceRequest $argument input argument
+     * - no process instance exists with the given key
+     * @param \ZeebeClient\CancelProcessInstanceRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \ZeebeClient\CancelProcessInstanceResponse
      */
-    public function CancelWorkflowInstance(\ZeebeClient\CancelWorkflowInstanceRequest $argument,
+    public function CancelProcessInstance(\ZeebeClient\CancelProcessInstanceRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/gateway_protocol.Gateway/CancelWorkflowInstance',
+        return $this->_simpleRequest('/gateway_protocol.Gateway/CancelProcessInstance',
         $argument,
-        ['\ZeebeClient\CancelWorkflowInstanceResponse', 'decode'],
+        ['\ZeebeClient\CancelProcessInstanceResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -75,7 +75,7 @@ class GatewayClient extends \Grpc\BaseStub {
      * @param \ZeebeClient\CompleteJobRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \ZeebeClient\CompleteJobResponse
      */
     public function CompleteJob(\ZeebeClient\CompleteJobRequest $argument,
       $metadata = [], $options = []) {
@@ -87,76 +87,75 @@ class GatewayClient extends \Grpc\BaseStub {
 
     /**
      *
-     * Creates and starts an instance of the specified workflow. The workflow definition to use to
+     * Creates and starts an instance of the specified process. The process definition to use to
      * create the instance can be specified either using its unique key (as returned by
-     * DeployWorkflow), or using the BPMN process ID and a version. Pass -1 as the version to use the
-     * latest deployed version. Note that only workflows with none start events can be started through
+     * DeployProcess), or using the BPMN process ID and a version. Pass -1 as the version to use the
+     * latest deployed version. Note that only processes with none start events can be started through
      * this command.
      *
      * Errors:
      * NOT_FOUND:
-     * - no workflow with the given key exists (if workflowKey was given)
-     * - no workflow with the given process ID exists (if bpmnProcessId was given but version was -1)
-     * - no workflow with the given process ID and version exists (if both bpmnProcessId and version were given)
+     * - no process with the given key exists (if processDefinitionKey was given)
+     * - no process with the given process ID exists (if bpmnProcessId was given but version was -1)
+     * - no process with the given process ID and version exists (if both bpmnProcessId and version were given)
      *
      * FAILED_PRECONDITION:
-     * - the workflow definition does not contain a none start event; only workflows with none
+     * - the process definition does not contain a none start event; only processes with none
      * start event can be started manually.
      *
      * INVALID_ARGUMENT:
      * - the given variables argument is not a valid JSON document; it is expected to be a valid
      * JSON document where the root node is an object.
-     * @param \ZeebeClient\CreateWorkflowInstanceRequest $argument input argument
+     * @param \ZeebeClient\CreateProcessInstanceRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \ZeebeClient\CreateProcessInstanceResponse
      */
-    public function CreateWorkflowInstance(\ZeebeClient\CreateWorkflowInstanceRequest $argument,
+    public function CreateProcessInstance(\ZeebeClient\CreateProcessInstanceRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/gateway_protocol.Gateway/CreateWorkflowInstance',
+        return $this->_simpleRequest('/gateway_protocol.Gateway/CreateProcessInstance',
         $argument,
-        ['\ZeebeClient\CreateWorkflowInstanceResponse', 'decode'],
+        ['\ZeebeClient\CreateProcessInstanceResponse', 'decode'],
         $metadata, $options);
     }
 
     /**
      *
-     * Behaves similarly to `rpc CreateWorkflowInstance`, except that a successful response is received when the workflow completes successfully.
-     * @param \ZeebeClient\CreateWorkflowInstanceWithResultRequest $argument input argument
+     * Behaves similarly to `rpc CreateProcessInstance`, except that a successful response is received when the process completes successfully.
+     * @param \ZeebeClient\CreateProcessInstanceWithResultRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \ZeebeClient\CreateProcessInstanceWithResultResponse
      */
-    public function CreateWorkflowInstanceWithResult(\ZeebeClient\CreateWorkflowInstanceWithResultRequest $argument,
+    public function CreateProcessInstanceWithResult(\ZeebeClient\CreateProcessInstanceWithResultRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/gateway_protocol.Gateway/CreateWorkflowInstanceWithResult',
+        return $this->_simpleRequest('/gateway_protocol.Gateway/CreateProcessInstanceWithResult',
         $argument,
-        ['\ZeebeClient\CreateWorkflowInstanceWithResultResponse', 'decode'],
+        ['\ZeebeClient\CreateProcessInstanceWithResultResponse', 'decode'],
         $metadata, $options);
     }
 
     /**
      *
-     * Deploys one or more workflows to Zeebe. Note that this is an atomic call,
-     * i.e. either all workflows are deployed, or none of them are.
+     * Deploys one or more processes to Zeebe. Note that this is an atomic call,
+     * i.e. either all processes are deployed, or none of them are.
      *
      * Errors:
      * INVALID_ARGUMENT:
      * - no resources given.
      * - if at least one resource is invalid. A resource is considered invalid if:
-     * - it is not a BPMN or YAML file (currently detected through the file extension)
      * - the resource data is not deserializable (e.g. detected as BPMN, but it's broken XML)
-     * - the workflow is invalid (e.g. an event-based gateway has an outgoing sequence flow to a task)
-     * @param \ZeebeClient\DeployWorkflowRequest $argument input argument
+     * - the process is invalid (e.g. an event-based gateway has an outgoing sequence flow to a task)
+     * @param \ZeebeClient\DeployProcessRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \ZeebeClient\DeployProcessResponse
      */
-    public function DeployWorkflow(\ZeebeClient\DeployWorkflowRequest $argument,
+    public function DeployProcess(\ZeebeClient\DeployProcessRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/gateway_protocol.Gateway/DeployWorkflow',
+        return $this->_simpleRequest('/gateway_protocol.Gateway/DeployProcess',
         $argument,
-        ['\ZeebeClient\DeployWorkflowResponse', 'decode'],
+        ['\ZeebeClient\DeployProcessResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -177,7 +176,7 @@ class GatewayClient extends \Grpc\BaseStub {
      * @param \ZeebeClient\FailJobRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \ZeebeClient\FailJobResponse
      */
     public function FailJob(\ZeebeClient\FailJobRequest $argument,
       $metadata = [], $options = []) {
@@ -189,7 +188,7 @@ class GatewayClient extends \Grpc\BaseStub {
 
     /**
      *
-     * Reports a business error (i.e. non-technical) that occurs while processing a job. The error is handled in the workflow by an error catch event. If there is no error catch event with the specified errorCode then an incident will be raised instead.
+     * Reports a business error (i.e. non-technical) that occurs while processing a job. The error is handled in the process by an error catch event. If there is no error catch event with the specified errorCode then an incident will be raised instead.
      *
      * Errors:
      * NOT_FOUND:
@@ -200,7 +199,7 @@ class GatewayClient extends \Grpc\BaseStub {
      * @param \ZeebeClient\ThrowErrorRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \ZeebeClient\ThrowErrorResponse
      */
     public function ThrowError(\ZeebeClient\ThrowErrorRequest $argument,
       $metadata = [], $options = []) {
@@ -221,7 +220,7 @@ class GatewayClient extends \Grpc\BaseStub {
      * @param \ZeebeClient\PublishMessageRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \ZeebeClient\PublishMessageResponse
      */
     public function PublishMessage(\ZeebeClient\PublishMessageRequest $argument,
       $metadata = [], $options = []) {
@@ -243,7 +242,7 @@ class GatewayClient extends \Grpc\BaseStub {
      * @param \ZeebeClient\ResolveIncidentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \ZeebeClient\ResolveIncidentResponse
      */
     public function ResolveIncident(\ZeebeClient\ResolveIncidentRequest $argument,
       $metadata = [], $options = []) {
@@ -255,7 +254,7 @@ class GatewayClient extends \Grpc\BaseStub {
 
     /**
      *
-     * Updates all the variables of a particular scope (e.g. workflow instance, flow element instance)
+     * Updates all the variables of a particular scope (e.g. process instance, flow element instance)
      * from the given JSON document.
      *
      * Errors:
@@ -267,7 +266,7 @@ class GatewayClient extends \Grpc\BaseStub {
      * @param \ZeebeClient\SetVariablesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \ZeebeClient\SetVariablesResponse
      */
     public function SetVariables(\ZeebeClient\SetVariablesRequest $argument,
       $metadata = [], $options = []) {
@@ -283,7 +282,7 @@ class GatewayClient extends \Grpc\BaseStub {
      * @param \ZeebeClient\TopologyRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \ZeebeClient\TopologyResponse
      */
     public function Topology(\ZeebeClient\TopologyRequest $argument,
       $metadata = [], $options = []) {
@@ -307,7 +306,7 @@ class GatewayClient extends \Grpc\BaseStub {
      * @param \ZeebeClient\UpdateJobRetriesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \ZeebeClient\UpdateJobRetriesResponse
      */
     public function UpdateJobRetries(\ZeebeClient\UpdateJobRetriesRequest $argument,
       $metadata = [], $options = []) {

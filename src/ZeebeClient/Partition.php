@@ -97,7 +97,7 @@ class Partition extends \Google\Protobuf\Internal\Message
      */
     public function setRole($var)
     {
-        GPBUtil::checkEnum($var, \ZeebeClient\Partition\PartitionBrokerRole::class);
+        GPBUtil::checkEnum($var, \ZeebeClient\Partition_PartitionBrokerRole::class);
         $this->role = $var;
 
         return $this;
@@ -123,7 +123,7 @@ class Partition extends \Google\Protobuf\Internal\Message
      */
     public function setHealth($var)
     {
-        GPBUtil::checkEnum($var, \ZeebeClient\Partition\PartitionBrokerHealth::class);
+        GPBUtil::checkEnum($var, \ZeebeClient\Partition_PartitionBrokerHealth::class);
         $this->health = $var;
 
         return $this;

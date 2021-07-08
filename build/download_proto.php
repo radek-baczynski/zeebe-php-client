@@ -1,5 +1,5 @@
 <?php
-$c = file_get_contents("https://raw.githubusercontent.com/zeebe-io/zeebe/{$argv[1]}/gateway-protocol/src/main/proto/gateway.proto");
+$c = file_get_contents("https://raw.githubusercontent.com/camunda-cloud/zeebe/{$argv[1]}/gateway-protocol/src/main/proto/gateway.proto");
 $c .= "\noption php_namespace = \"ZeebeClient\";";
 $c .= "\noption php_metadata_namespace = \"ZeebeClient\";";
 

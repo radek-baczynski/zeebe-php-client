@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class SetVariablesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * the unique identifier of a particular element; can be the workflow instance key (as
+     * the unique identifier of a particular element; can be the process instance key (as
      * obtained during instance creation), or a given element, such as a service task (see
      * elementInstanceKey on the job message)
      *
@@ -48,7 +48,7 @@ class SetVariablesRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $elementInstanceKey
-     *           the unique identifier of a particular element; can be the workflow instance key (as
+     *           the unique identifier of a particular element; can be the process instance key (as
      *           obtained during instance creation), or a given element, such as a service task (see
      *           elementInstanceKey on the job message)
      *     @type string $variables
@@ -70,7 +70,7 @@ class SetVariablesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * the unique identifier of a particular element; can be the workflow instance key (as
+     * the unique identifier of a particular element; can be the process instance key (as
      * obtained during instance creation), or a given element, such as a service task (see
      * elementInstanceKey on the job message)
      *
@@ -83,7 +83,7 @@ class SetVariablesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * the unique identifier of a particular element; can be the workflow instance key (as
+     * the unique identifier of a particular element; can be the process instance key (as
      * obtained during instance creation), or a given element, such as a service task (see
      * elementInstanceKey on the job message)
      *
