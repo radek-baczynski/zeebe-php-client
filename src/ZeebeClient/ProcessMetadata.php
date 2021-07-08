@@ -9,13 +9,13 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>gateway_protocol.WorkflowMetadata</code>
+ * Generated from protobuf message <code>gateway_protocol.ProcessMetadata</code>
  */
-class WorkflowMetadata extends \Google\Protobuf\Internal\Message
+class ProcessMetadata extends \Google\Protobuf\Internal\Message
 {
     /**
      * the bpmn process ID, as parsed during deployment; together with the version forms a
-     * unique identifier for a specific workflow definition
+     * unique identifier for a specific process definition
      *
      * Generated from protobuf field <code>string bpmnProcessId = 1;</code>
      */
@@ -27,13 +27,13 @@ class WorkflowMetadata extends \Google\Protobuf\Internal\Message
      */
     protected $version = 0;
     /**
-     * the assigned key, which acts as a unique identifier for this workflow
+     * the assigned key, which acts as a unique identifier for this process
      *
-     * Generated from protobuf field <code>int64 workflowKey = 3;</code>
+     * Generated from protobuf field <code>int64 processDefinitionKey = 3;</code>
      */
-    protected $workflowKey = 0;
+    protected $processDefinitionKey = 0;
     /**
-     * the resource name (see: WorkflowRequestObject.name) from which this workflow was
+     * the resource name (see: ProcessRequestObject.name) from which this process was
      * parsed
      *
      * Generated from protobuf field <code>string resourceName = 4;</code>
@@ -48,13 +48,13 @@ class WorkflowMetadata extends \Google\Protobuf\Internal\Message
      *
      *     @type string $bpmnProcessId
      *           the bpmn process ID, as parsed during deployment; together with the version forms a
-     *           unique identifier for a specific workflow definition
+     *           unique identifier for a specific process definition
      *     @type int $version
      *           the assigned process version
-     *     @type int|string $workflowKey
-     *           the assigned key, which acts as a unique identifier for this workflow
+     *     @type int|string $processDefinitionKey
+     *           the assigned key, which acts as a unique identifier for this process
      *     @type string $resourceName
-     *           the resource name (see: WorkflowRequestObject.name) from which this workflow was
+     *           the resource name (see: ProcessRequestObject.name) from which this process was
      *           parsed
      * }
      */
@@ -65,7 +65,7 @@ class WorkflowMetadata extends \Google\Protobuf\Internal\Message
 
     /**
      * the bpmn process ID, as parsed during deployment; together with the version forms a
-     * unique identifier for a specific workflow definition
+     * unique identifier for a specific process definition
      *
      * Generated from protobuf field <code>string bpmnProcessId = 1;</code>
      * @return string
@@ -77,7 +77,7 @@ class WorkflowMetadata extends \Google\Protobuf\Internal\Message
 
     /**
      * the bpmn process ID, as parsed during deployment; together with the version forms a
-     * unique identifier for a specific workflow definition
+     * unique identifier for a specific process definition
      *
      * Generated from protobuf field <code>string bpmnProcessId = 1;</code>
      * @param string $var
@@ -118,33 +118,33 @@ class WorkflowMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * the assigned key, which acts as a unique identifier for this workflow
+     * the assigned key, which acts as a unique identifier for this process
      *
-     * Generated from protobuf field <code>int64 workflowKey = 3;</code>
+     * Generated from protobuf field <code>int64 processDefinitionKey = 3;</code>
      * @return int|string
      */
-    public function getWorkflowKey()
+    public function getProcessDefinitionKey()
     {
-        return $this->workflowKey;
+        return $this->processDefinitionKey;
     }
 
     /**
-     * the assigned key, which acts as a unique identifier for this workflow
+     * the assigned key, which acts as a unique identifier for this process
      *
-     * Generated from protobuf field <code>int64 workflowKey = 3;</code>
+     * Generated from protobuf field <code>int64 processDefinitionKey = 3;</code>
      * @param int|string $var
      * @return $this
      */
-    public function setWorkflowKey($var)
+    public function setProcessDefinitionKey($var)
     {
         GPBUtil::checkInt64($var);
-        $this->workflowKey = $var;
+        $this->processDefinitionKey = $var;
 
         return $this;
     }
 
     /**
-     * the resource name (see: WorkflowRequestObject.name) from which this workflow was
+     * the resource name (see: ProcessRequestObject.name) from which this process was
      * parsed
      *
      * Generated from protobuf field <code>string resourceName = 4;</code>
@@ -156,7 +156,7 @@ class WorkflowMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * the resource name (see: WorkflowRequestObject.name) from which this workflow was
+     * the resource name (see: ProcessRequestObject.name) from which this process was
      * parsed
      *
      * Generated from protobuf field <code>string resourceName = 4;</code>

@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>gateway_protocol.DeployWorkflowResponse</code>
+ * Generated from protobuf message <code>gateway_protocol.DeployProcessResponse</code>
  */
-class DeployWorkflowResponse extends \Google\Protobuf\Internal\Message
+class DeployProcessResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * the unique key identifying the deployment
@@ -20,11 +20,11 @@ class DeployWorkflowResponse extends \Google\Protobuf\Internal\Message
      */
     protected $key = 0;
     /**
-     * a list of deployed workflows
+     * a list of deployed processes
      *
-     * Generated from protobuf field <code>repeated .gateway_protocol.WorkflowMetadata workflows = 2;</code>
+     * Generated from protobuf field <code>repeated .gateway_protocol.ProcessMetadata processes = 2;</code>
      */
-    private $workflows;
+    private $processes;
 
     /**
      * Constructor.
@@ -34,8 +34,8 @@ class DeployWorkflowResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type int|string $key
      *           the unique key identifying the deployment
-     *     @type \ZeebeClient\WorkflowMetadata[]|\Google\Protobuf\Internal\RepeatedField $workflows
-     *           a list of deployed workflows
+     *     @type \ZeebeClient\ProcessMetadata[]|\Google\Protobuf\Internal\RepeatedField $processes
+     *           a list of deployed processes
      * }
      */
     public function __construct($data = NULL) {
@@ -70,27 +70,27 @@ class DeployWorkflowResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * a list of deployed workflows
+     * a list of deployed processes
      *
-     * Generated from protobuf field <code>repeated .gateway_protocol.WorkflowMetadata workflows = 2;</code>
+     * Generated from protobuf field <code>repeated .gateway_protocol.ProcessMetadata processes = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getWorkflows()
+    public function getProcesses()
     {
-        return $this->workflows;
+        return $this->processes;
     }
 
     /**
-     * a list of deployed workflows
+     * a list of deployed processes
      *
-     * Generated from protobuf field <code>repeated .gateway_protocol.WorkflowMetadata workflows = 2;</code>
-     * @param \ZeebeClient\WorkflowMetadata[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .gateway_protocol.ProcessMetadata processes = 2;</code>
+     * @param \ZeebeClient\ProcessMetadata[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setWorkflows($var)
+    public function setProcesses($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \ZeebeClient\WorkflowMetadata::class);
-        $this->workflows = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \ZeebeClient\ProcessMetadata::class);
+        $this->processes = $arr;
 
         return $this;
     }

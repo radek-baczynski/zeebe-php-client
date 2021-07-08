@@ -26,29 +26,29 @@ class ActivatedJob extends \Google\Protobuf\Internal\Message
      */
     protected $type = '';
     /**
-     * the job's workflow instance key
+     * the job's process instance key
      *
-     * Generated from protobuf field <code>int64 workflowInstanceKey = 3;</code>
+     * Generated from protobuf field <code>int64 processInstanceKey = 3;</code>
      */
-    protected $workflowInstanceKey = 0;
+    protected $processInstanceKey = 0;
     /**
-     * the bpmn process ID of the job workflow definition
+     * the bpmn process ID of the job process definition
      *
      * Generated from protobuf field <code>string bpmnProcessId = 4;</code>
      */
     protected $bpmnProcessId = '';
     /**
-     * the version of the job workflow definition
+     * the version of the job process definition
      *
-     * Generated from protobuf field <code>int32 workflowDefinitionVersion = 5;</code>
+     * Generated from protobuf field <code>int32 processDefinitionVersion = 5;</code>
      */
-    protected $workflowDefinitionVersion = 0;
+    protected $processDefinitionVersion = 0;
     /**
-     * the key of the job workflow definition
+     * the key of the job process definition
      *
-     * Generated from protobuf field <code>int64 workflowKey = 6;</code>
+     * Generated from protobuf field <code>int64 processDefinitionKey = 6;</code>
      */
-    protected $workflowKey = 0;
+    protected $processDefinitionKey = 0;
     /**
      * the associated task element ID
      *
@@ -57,7 +57,7 @@ class ActivatedJob extends \Google\Protobuf\Internal\Message
     protected $elementId = '';
     /**
      * the unique key identifying the associated task, unique within the scope of the
-     * workflow instance
+     * process instance
      *
      * Generated from protobuf field <code>int64 elementInstanceKey = 8;</code>
      */
@@ -105,19 +105,19 @@ class ActivatedJob extends \Google\Protobuf\Internal\Message
      *           the key, a unique identifier for the job
      *     @type string $type
      *           the type of the job (should match what was requested)
-     *     @type int|string $workflowInstanceKey
-     *           the job's workflow instance key
+     *     @type int|string $processInstanceKey
+     *           the job's process instance key
      *     @type string $bpmnProcessId
-     *           the bpmn process ID of the job workflow definition
-     *     @type int $workflowDefinitionVersion
-     *           the version of the job workflow definition
-     *     @type int|string $workflowKey
-     *           the key of the job workflow definition
+     *           the bpmn process ID of the job process definition
+     *     @type int $processDefinitionVersion
+     *           the version of the job process definition
+     *     @type int|string $processDefinitionKey
+     *           the key of the job process definition
      *     @type string $elementId
      *           the associated task element ID
      *     @type int|string $elementInstanceKey
      *           the unique key identifying the associated task, unique within the scope of the
-     *           workflow instance
+     *           process instance
      *     @type string $customHeaders
      *           a set of custom headers defined during modelling; returned as a serialized
      *           JSON document
@@ -190,33 +190,33 @@ class ActivatedJob extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * the job's workflow instance key
+     * the job's process instance key
      *
-     * Generated from protobuf field <code>int64 workflowInstanceKey = 3;</code>
+     * Generated from protobuf field <code>int64 processInstanceKey = 3;</code>
      * @return int|string
      */
-    public function getWorkflowInstanceKey()
+    public function getProcessInstanceKey()
     {
-        return $this->workflowInstanceKey;
+        return $this->processInstanceKey;
     }
 
     /**
-     * the job's workflow instance key
+     * the job's process instance key
      *
-     * Generated from protobuf field <code>int64 workflowInstanceKey = 3;</code>
+     * Generated from protobuf field <code>int64 processInstanceKey = 3;</code>
      * @param int|string $var
      * @return $this
      */
-    public function setWorkflowInstanceKey($var)
+    public function setProcessInstanceKey($var)
     {
         GPBUtil::checkInt64($var);
-        $this->workflowInstanceKey = $var;
+        $this->processInstanceKey = $var;
 
         return $this;
     }
 
     /**
-     * the bpmn process ID of the job workflow definition
+     * the bpmn process ID of the job process definition
      *
      * Generated from protobuf field <code>string bpmnProcessId = 4;</code>
      * @return string
@@ -227,7 +227,7 @@ class ActivatedJob extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * the bpmn process ID of the job workflow definition
+     * the bpmn process ID of the job process definition
      *
      * Generated from protobuf field <code>string bpmnProcessId = 4;</code>
      * @param string $var
@@ -242,53 +242,53 @@ class ActivatedJob extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * the version of the job workflow definition
+     * the version of the job process definition
      *
-     * Generated from protobuf field <code>int32 workflowDefinitionVersion = 5;</code>
+     * Generated from protobuf field <code>int32 processDefinitionVersion = 5;</code>
      * @return int
      */
-    public function getWorkflowDefinitionVersion()
+    public function getProcessDefinitionVersion()
     {
-        return $this->workflowDefinitionVersion;
+        return $this->processDefinitionVersion;
     }
 
     /**
-     * the version of the job workflow definition
+     * the version of the job process definition
      *
-     * Generated from protobuf field <code>int32 workflowDefinitionVersion = 5;</code>
+     * Generated from protobuf field <code>int32 processDefinitionVersion = 5;</code>
      * @param int $var
      * @return $this
      */
-    public function setWorkflowDefinitionVersion($var)
+    public function setProcessDefinitionVersion($var)
     {
         GPBUtil::checkInt32($var);
-        $this->workflowDefinitionVersion = $var;
+        $this->processDefinitionVersion = $var;
 
         return $this;
     }
 
     /**
-     * the key of the job workflow definition
+     * the key of the job process definition
      *
-     * Generated from protobuf field <code>int64 workflowKey = 6;</code>
+     * Generated from protobuf field <code>int64 processDefinitionKey = 6;</code>
      * @return int|string
      */
-    public function getWorkflowKey()
+    public function getProcessDefinitionKey()
     {
-        return $this->workflowKey;
+        return $this->processDefinitionKey;
     }
 
     /**
-     * the key of the job workflow definition
+     * the key of the job process definition
      *
-     * Generated from protobuf field <code>int64 workflowKey = 6;</code>
+     * Generated from protobuf field <code>int64 processDefinitionKey = 6;</code>
      * @param int|string $var
      * @return $this
      */
-    public function setWorkflowKey($var)
+    public function setProcessDefinitionKey($var)
     {
         GPBUtil::checkInt64($var);
-        $this->workflowKey = $var;
+        $this->processDefinitionKey = $var;
 
         return $this;
     }
@@ -321,7 +321,7 @@ class ActivatedJob extends \Google\Protobuf\Internal\Message
 
     /**
      * the unique key identifying the associated task, unique within the scope of the
-     * workflow instance
+     * process instance
      *
      * Generated from protobuf field <code>int64 elementInstanceKey = 8;</code>
      * @return int|string
@@ -333,7 +333,7 @@ class ActivatedJob extends \Google\Protobuf\Internal\Message
 
     /**
      * the unique key identifying the associated task, unique within the scope of the
-     * workflow instance
+     * process instance
      *
      * Generated from protobuf field <code>int64 elementInstanceKey = 8;</code>
      * @param int|string $var
