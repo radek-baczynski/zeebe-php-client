@@ -3,3 +3,4 @@ build/zeebe.proto
 examples/vendor
 /examples/camunda_cloud.txt
 /examples/.env
+/examples/story.bpmn
