@@ -9,19 +9,19 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>gateway_protocol.CreateWorkflowInstanceRequest</code>
+ * Generated from protobuf message <code>gateway_protocol.CreateProcessInstanceRequest</code>
  */
-class CreateWorkflowInstanceRequest extends \Google\Protobuf\Internal\Message
+class CreateProcessInstanceRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * the unique key identifying the workflow definition (e.g. returned from a workflow
-     * in the DeployWorkflowResponse message)
+     * the unique key identifying the process definition (e.g. returned from a process
+     * in the DeployProcessResponse message)
      *
-     * Generated from protobuf field <code>int64 workflowKey = 1;</code>
+     * Generated from protobuf field <code>int64 processDefinitionKey = 1;</code>
      */
-    protected $workflowKey = 0;
+    protected $processDefinitionKey = 0;
     /**
-     * the BPMN process ID of the workflow definition
+     * the BPMN process ID of the process definition
      *
      * Generated from protobuf field <code>string bpmnProcessId = 2;</code>
      */
@@ -34,7 +34,7 @@ class CreateWorkflowInstanceRequest extends \Google\Protobuf\Internal\Message
     protected $version = 0;
     /**
      * JSON document that will instantiate the variables for the root variable scope of the
-     * workflow instance; it must be a JSON object, as variables will be mapped in a
+     * process instance; it must be a JSON object, as variables will be mapped in a
      * key-value fashion. e.g. { "a": 1, "b": 2 } will create two variables, named "a" and
      * "b" respectively, with their associated values. [{ "a": 1, "b": 2 }] would not be a
      * valid argument, as the root of the JSON document is an array and not an object.
@@ -49,16 +49,16 @@ class CreateWorkflowInstanceRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int|string $workflowKey
-     *           the unique key identifying the workflow definition (e.g. returned from a workflow
-     *           in the DeployWorkflowResponse message)
+     *     @type int|string $processDefinitionKey
+     *           the unique key identifying the process definition (e.g. returned from a process
+     *           in the DeployProcessResponse message)
      *     @type string $bpmnProcessId
-     *           the BPMN process ID of the workflow definition
+     *           the BPMN process ID of the process definition
      *     @type int $version
      *           the version of the process; set to -1 to use the latest version
      *     @type string $variables
      *           JSON document that will instantiate the variables for the root variable scope of the
-     *           workflow instance; it must be a JSON object, as variables will be mapped in a
+     *           process instance; it must be a JSON object, as variables will be mapped in a
      *           key-value fashion. e.g. { "a": 1, "b": 2 } will create two variables, named "a" and
      *           "b" respectively, with their associated values. [{ "a": 1, "b": 2 }] would not be a
      *           valid argument, as the root of the JSON document is an array and not an object.
@@ -70,35 +70,35 @@ class CreateWorkflowInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * the unique key identifying the workflow definition (e.g. returned from a workflow
-     * in the DeployWorkflowResponse message)
+     * the unique key identifying the process definition (e.g. returned from a process
+     * in the DeployProcessResponse message)
      *
-     * Generated from protobuf field <code>int64 workflowKey = 1;</code>
+     * Generated from protobuf field <code>int64 processDefinitionKey = 1;</code>
      * @return int|string
      */
-    public function getWorkflowKey()
+    public function getProcessDefinitionKey()
     {
-        return $this->workflowKey;
+        return $this->processDefinitionKey;
     }
 
     /**
-     * the unique key identifying the workflow definition (e.g. returned from a workflow
-     * in the DeployWorkflowResponse message)
+     * the unique key identifying the process definition (e.g. returned from a process
+     * in the DeployProcessResponse message)
      *
-     * Generated from protobuf field <code>int64 workflowKey = 1;</code>
+     * Generated from protobuf field <code>int64 processDefinitionKey = 1;</code>
      * @param int|string $var
      * @return $this
      */
-    public function setWorkflowKey($var)
+    public function setProcessDefinitionKey($var)
     {
         GPBUtil::checkInt64($var);
-        $this->workflowKey = $var;
+        $this->processDefinitionKey = $var;
 
         return $this;
     }
 
     /**
-     * the BPMN process ID of the workflow definition
+     * the BPMN process ID of the process definition
      *
      * Generated from protobuf field <code>string bpmnProcessId = 2;</code>
      * @return string
@@ -109,7 +109,7 @@ class CreateWorkflowInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * the BPMN process ID of the workflow definition
+     * the BPMN process ID of the process definition
      *
      * Generated from protobuf field <code>string bpmnProcessId = 2;</code>
      * @param string $var
@@ -151,7 +151,7 @@ class CreateWorkflowInstanceRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * JSON document that will instantiate the variables for the root variable scope of the
-     * workflow instance; it must be a JSON object, as variables will be mapped in a
+     * process instance; it must be a JSON object, as variables will be mapped in a
      * key-value fashion. e.g. { "a": 1, "b": 2 } will create two variables, named "a" and
      * "b" respectively, with their associated values. [{ "a": 1, "b": 2 }] would not be a
      * valid argument, as the root of the JSON document is an array and not an object.
@@ -166,7 +166,7 @@ class CreateWorkflowInstanceRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * JSON document that will instantiate the variables for the root variable scope of the
-     * workflow instance; it must be a JSON object, as variables will be mapped in a
+     * process instance; it must be a JSON object, as variables will be mapped in a
      * key-value fashion. e.g. { "a": 1, "b": 2 } will create two variables, named "a" and
      * "b" respectively, with their associated values. [{ "a": 1, "b": 2 }] would not be a
      * valid argument, as the root of the JSON document is an array and not an object.

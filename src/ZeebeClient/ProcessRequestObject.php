@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>gateway_protocol.WorkflowRequestObject</code>
+ * Generated from protobuf message <code>gateway_protocol.ProcessRequestObject</code>
  */
-class WorkflowRequestObject extends \Google\Protobuf\Internal\Message
+class ProcessRequestObject extends \Google\Protobuf\Internal\Message
 {
     /**
      * the resource basename, e.g. myProcess.bpmn
@@ -20,16 +20,9 @@ class WorkflowRequestObject extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * the resource type; if set to BPMN or YAML then the file extension
-     * is ignored
-     *
-     * Generated from protobuf field <code>.gateway_protocol.WorkflowRequestObject.ResourceType type = 2;</code>
-     */
-    protected $type = 0;
-    /**
      * the process definition as a UTF8-encoded string
      *
-     * Generated from protobuf field <code>bytes definition = 3;</code>
+     * Generated from protobuf field <code>bytes definition = 2;</code>
      */
     protected $definition = '';
 
@@ -41,9 +34,6 @@ class WorkflowRequestObject extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *           the resource basename, e.g. myProcess.bpmn
-     *     @type int $type
-     *           the resource type; if set to BPMN or YAML then the file extension
-     *           is ignored
      *     @type string $definition
      *           the process definition as a UTF8-encoded string
      * }
@@ -80,37 +70,9 @@ class WorkflowRequestObject extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * the resource type; if set to BPMN or YAML then the file extension
-     * is ignored
-     *
-     * Generated from protobuf field <code>.gateway_protocol.WorkflowRequestObject.ResourceType type = 2;</code>
-     * @return int
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * the resource type; if set to BPMN or YAML then the file extension
-     * is ignored
-     *
-     * Generated from protobuf field <code>.gateway_protocol.WorkflowRequestObject.ResourceType type = 2;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setType($var)
-    {
-        GPBUtil::checkEnum($var, \ZeebeClient\WorkflowRequestObject\ResourceType::class);
-        $this->type = $var;
-
-        return $this;
-    }
-
-    /**
      * the process definition as a UTF8-encoded string
      *
-     * Generated from protobuf field <code>bytes definition = 3;</code>
+     * Generated from protobuf field <code>bytes definition = 2;</code>
      * @return string
      */
     public function getDefinition()
@@ -121,7 +83,7 @@ class WorkflowRequestObject extends \Google\Protobuf\Internal\Message
     /**
      * the process definition as a UTF8-encoded string
      *
-     * Generated from protobuf field <code>bytes definition = 3;</code>
+     * Generated from protobuf field <code>bytes definition = 2;</code>
      * @param string $var
      * @return $this
      */

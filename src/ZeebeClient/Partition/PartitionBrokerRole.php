@@ -21,10 +21,15 @@ class PartitionBrokerRole
      * Generated from protobuf enum <code>FOLLOWER = 1;</code>
      */
     const FOLLOWER = 1;
+    /**
+     * Generated from protobuf enum <code>INACTIVE = 2;</code>
+     */
+    const INACTIVE = 2;
 
     private static $valueToName = [
         self::LEADER => 'LEADER',
         self::FOLLOWER => 'FOLLOWER',
+        self::INACTIVE => 'INACTIVE',
     ];
 
     public static function name($value)

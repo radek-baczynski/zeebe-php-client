@@ -1,4 +1,4 @@
-build/zeebe.proto
+zeebe.proto
 .idea
 examples/vendor
 /examples/camunda_cloud.txt

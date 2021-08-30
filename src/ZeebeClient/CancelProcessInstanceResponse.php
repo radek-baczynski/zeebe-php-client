@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>gateway_protocol.CancelWorkflowInstanceResponse</code>
+ * Generated from protobuf message <code>gateway_protocol.CancelProcessInstanceResponse</code>
  */
-class CancelWorkflowInstanceResponse extends \Google\Protobuf\Internal\Message
+class CancelProcessInstanceResponse extends \Google\Protobuf\Internal\Message
 {
 
     /**
